@@ -5,14 +5,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
 	<meta charset="utf-8">
 	<title>Import excel data in database</title>
-	<link rel="stylesheet" href="<?php echo font_url;?>css/style.css">
-	<link rel="stylesheet" href="<?php echo font_url;?>css/bootstrap.min.css">
-  <script src="<?php echo font_url;?>js/jquery.min.js"></script>
-  <script src="<?php echo font_url;?>js/bootstrap.min.js"></script>
-  <script src="<?php echo font_url;?>js/script.js"></script>
+	<link rel="stylesheet" href="<?php echo base_url();?>css/style.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>css/bootstrap.min.css">
+  <script src="<?php echo base_url();?>js/jquery.min.js"></script>
+  <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url();?>js/script.js"></script>
 
 </head>
 <body>
+
+  <center><h2 style="color: gray;">Excel Data Import in Mysql Table </h2></center>
 
   <?php if($this->session->flashdata('succmsg')!=''){ ?>
 	<center><div class="alert alert-success" style="margin-top: 10px;">
@@ -28,7 +30,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  <?php } ?>
 
- <form method="post" class="file-uploader" action="<?php echo base_url('Welcome/import1/');?>" enctype="multipart/form-data">
+
+ <form method="post" class="file-uploader" action="<?php echo base_url('index.php/Welcome/import1/');?>" enctype="multipart/form-data">
   <div class="file-uploader__message-area">
     <p>Select a file to upload</p>
   </div>

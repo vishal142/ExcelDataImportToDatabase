@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
 
 
 	function import1(){
-		$this->load->library('excel_reader/PHPExcel');
+        $this->load->library('excel_reader/PHPExcel');
      	$this->load->library('excel_reader/PHPExcel/Iofactory');
 
 		if ((!empty($_FILES['file_name']['name'])) && ($_FILES['file_name']['size'] > 0)) {
@@ -100,7 +100,7 @@ class Welcome extends CI_Controller {
                     //die();
 
                     $this->session->set_flashdata('succmsg', 'Sucessfully ' . $extension . ' file imported');
-                    redirect(base_url() . "Welcome/");
+                    redirect(base_url() . "index.php/Welcome/");
                     
 
 
@@ -108,7 +108,7 @@ class Welcome extends CI_Controller {
             }else{
 
                 $this->session->set_flashdata('errmsg', 'Only ' . $valid_extension[0] . ','.$valid_extension[1] .','.$valid_extension[2] .' '.'extension are allowed.');
-                    redirect(base_url() . "Welcome/");
+                    redirect(base_url() . "index.php/Welcome/");
 
 
             } 
